@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="openNav">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
+    <title>New Blog - Blogify V1</title>
+<link href="../css/main.css" rel="stylesheet"></head>
+<body>
+
+    <!-- INCLUDING SIDE NAVIGATION -->
+    <% include ./ejs-partials/navigation.ejs %>
+
+    <div class="new-wrapper">
+        <div class="blog-form-wrap">
+            <form action="/blogs" method="POST" class="blog-form">
+                <div class="blog-form__field">
+                    <label>Title</label>
+                    <input class="blog-form__input" type="text" name="blog[title]" placeholder="Title" required>
+                </div>
+                <div class="blog-form__field">
+                    <label>Image</label>
+                    <input class="blog-form__input" type="text" name="blog[image]" placeholder="Image" required>
+                </div>
+                <div class="blog-form__field">
+                    <label>Content</label>
+                    <textarea class="blog-form__input" type="text" name="blog[body]" placeholder="Content" required></textarea>
+                </div>
+                <button type="submit" class="blog-form__button">Create</button>
+            </form>
+        </div>
+    </div>
+<script type="text/javascript" src="../js/bundle.js"></script></body>
+</html>

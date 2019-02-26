@@ -1,0 +1,58 @@
+{
+  "name": "blog-app-v1",
+  "version": "1.0.0",
+  "description": "Blog related web application. Let users share their stories with others.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack -p",
+    "start": "webpack-dev-server --mode development",
+    "node-start": "nodemon ./resources/server/server-index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreasDeveloper/Blog-Web-App-v1.git"
+  },
+  "keywords": [
+    "webapp",
+    "website",
+    "blog",
+    "blogapp",
+    "js",
+    "express",
+    "nodejs"
+  ],
+  "author": "AndreasDEV",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://https://github.com/AndreasDeveloper/Blog-Web-App-v1/issues"
+  },
+  "homepage": "https://github.com/AndreasDeveloper/Blog-Web-App-v1#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-exclude-assets-plugin": "0.0.7",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

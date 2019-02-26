@@ -1,0 +1,381 @@
+/* ------------------------------------------- */
+/* CLAERFIX MIXIN FOR THE GRID
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* MIXIN THAT CENTERS THE ELEMENTS TO VH
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* MIXIN FOR IMAGE BACKGROUND SETUP
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* MIXIN FOR ELEMENT POSITIONING | JUSTIFY / ALIGN
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* MIXIN FOR TEXT UNDERLINE | SPLITTER
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* MIXIN FOR POSITIONING THE TEXT IN SLIDER
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* MEDIA QUERY MANAGER
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* MEDIA QUERIES | SHORTCUT VERSION
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* BASIC SETUP
+/* ------------------------------------------- */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /* DEFINES WHAT REM IS */
+  font-size: 62.5%;
+  /* Takes 62.5% of the default font size (16px). 100 / 16 = 62.5  */
+  /* || 1rem = 10px; 10px/16px = 62.5% || */ }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  font-family: 'Raleway', 'Arial', 'serif';
+  background-color: #faf8f8;
+  overflow-x: hidden; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+.primary-nav {
+  position: fixed;
+  z-index: 999; }
+
+.menu {
+  position: relative; }
+
+.menu ul {
+  margin: 0;
+  padding: 8rem 0;
+  list-style: none; }
+  @media only screen and (max-width: 86.875em) {
+    .menu ul {
+      margin-top: -5rem; } }
+
+.open-panel {
+  border: none;
+  background-color: #fff;
+  padding: 0; }
+
+.hamburger {
+  background: #fff;
+  position: relative;
+  display: block;
+  text-align: center;
+  padding: 13px 0;
+  width: 50px;
+  height: 73px;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  cursor: pointer; }
+
+.hamburger:before {
+  content: "\2630";
+  /* hamburger icon */
+  display: block;
+  color: #000;
+  line-height: 32px;
+  font-size: 16px; }
+
+.openNav .hamburger:before {
+  content: "\2715";
+  /* close icon */
+  display: block;
+  color: #000;
+  line-height: 32px;
+  font-size: 16px; }
+
+.hamburger:hover:before {
+  color: #777; }
+
+.primary-nav .menu li {
+  position: relative; }
+
+.menu-i {
+  position: absolute;
+  top: 1.2rem;
+  right: .4rem;
+  pointer-events: none;
+  width: 3rem;
+  height: 3rem;
+  color: #aaa;
+  font-size: 1.9rem; }
+
+.menu,
+.menu a,
+.menu a:visited {
+  color: #aaa;
+  text-decoration: none !important;
+  position: relative; }
+
+.menu a {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  font-size: 1.4rem; }
+
+.menu a:hover, .menu i:hover {
+  color: #fff; }
+
+.menu {
+  margin-bottom: 3em; }
+
+.new-wrapper {
+  position: absolute;
+  left: 5rem;
+  top: 2rem;
+  width: calc(100% - 5rem);
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  padding: 10rem 4rem 10rem 5rem; }
+  @media only screen and (max-width: 37.5em) {
+    .new-wrapper {
+      padding: 12rem 0 0 5rem; } }
+
+.openNav .new-wrapper {
+  position: absolute;
+  transform: translate3d(200px, 0, 0);
+  width: calc(100% - 250px);
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1); }
+
+.menu {
+  position: absolute;
+  display: block;
+  left: -200px;
+  top: 0;
+  width: 25rem;
+  transition: all 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  background-color: #000;
+  z-index: 999; }
+
+.overflow-container {
+  position: relative;
+  height: 100vh;
+  overflow-y: auto;
+  border-top: 73px solid #fff;
+  z-index: -1;
+  display: block; }
+
+.menu a.logotype {
+  position: absolute !important;
+  top: 11px;
+  left: 55px;
+  display: block;
+  font-family: 'Work Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #000;
+  font-size: 21px;
+  padding: 10px; }
+
+.menu a.logotype span {
+  font-weight: 400; }
+
+.menu a.logotype:hover {
+  color: #777; }
+
+.menu:hover {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.openNav .menu:hover {
+  position: absolute;
+  left: -200px; }
+
+.openNav .menu {
+  transform: translate3d(200px, 0, 0);
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1); }
+
+.user-mini-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+  padding: 10rem 0;
+  width: 100%;
+  height: 10rem; }
+  @media only screen and (max-width: 86.875em) {
+    .user-mini-nav {
+      padding: 8rem 0; } }
+
+.user-image-wrap {
+  position: relative;
+  cursor: pointer; }
+  .user-image-wrap__image {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%; }
+
+.user-name {
+  font-size: 2rem;
+  font-weight: 500;
+  padding-top: 3rem; }
+
+.user-image-wrap__circle-1 {
+  position: absolute;
+  border-width: .1rem;
+  border-style: solid;
+  border-color: #fff #fff #fff transparent;
+  border-radius: 50%;
+  width: 11rem;
+  height: 11rem;
+  transition: all 1.5s ease-in-out;
+  top: -0.5rem;
+  left: -0.5rem; }
+
+.user-image-wrap__circle-2 {
+  position: absolute;
+  border-width: .1rem;
+  border-style: solid;
+  border-color: #fff transparent #fff #fff;
+  border-radius: 50%;
+  width: 11.5rem;
+  height: 11.5rem;
+  transition: all 1.5s ease-in-out;
+  top: -.75rem;
+  left: -.8rem; }
+
+/* - CIRCLES 'ANIMATION' - */
+.user-image-wrap:hover .user-image-wrap__circle-1 {
+  transform: rotate(360deg); }
+
+.user-image-wrap:hover .user-image-wrap__circle-2 {
+  transform: rotate(-360deg); }
+
+.log-out {
+  position: absolute;
+  top: 90%;
+  left: 30%;
+  cursor: pointer; }
+  .log-out__text {
+    font-size: 1.6rem;
+    font-weight: 500; }
+    .log-out__text:hover {
+      color: #fff; }
+    .log-out__text > i {
+      padding-right: 2rem; }
+
+/* look and feel only, not needed for core menu*/
+@-webkit-keyframes grow {
+  0% {
+    display: none;
+    opacity: 0; }
+  50% {
+    display: block;
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+@keyframes grow {
+  0% {
+    display: none;
+    opacity: 0; }
+  50% {
+    display: block;
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: .5rem;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
+/* Resposive Typography */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: #000;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 300; }
+
+.slide-effect {
+  display: block;
+  position: relative;
+  padding-bottom: .6rem;
+  cursor: pointer;
+  max-width: 10rem; }
+
+.slide-effect:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  height: .1rem;
+  width: 0;
+  transition: width 0s ease, background .5s ease; }
+
+.slide-effect:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: .1rem;
+  width: 0;
+  background: #fff;
+  transition: width .5s ease; }
+
+.slide-effect:hover:before {
+  width: 90%;
+  background: #fff;
+  transition: width .5s ease; }
+
+.slide-effect:hover:after {
+  width: 90%;
+  background: transparent;
+  transition: all 0s ease; }
+
