@@ -76,6 +76,18 @@ app.post('/blogs', (req, res) => {
     });
 });
 
+// - GET - Blog Full Page - | Showing full specific blog content
+app.get('/blogs/:id', (req, res) => {
+    const blogID = req.params.id;
+    Blog.findById(blogID, (err, blogContent) => {
+        if (!err) {
+            res.render((`${__dirname}/../../dist/html/show-blog.ejs`), { blog: blogContent });
+        } else {
+            throw new Error(err);
+        }
+    });
+}); 
+
 
 // - Setting The Port | Listening - \\
 const port = 3000;

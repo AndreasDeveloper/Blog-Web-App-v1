@@ -28,6 +28,10 @@ module.exports = {
             template: './resources/html/ejs-partials/navigation.ejs',
             excludeAssets: [/main.css/, /bundle.js/] // Excluding css from this file
         }),
+        new HtmlWebpackPlugin({ // Full Blog Content Page
+            filename: 'html/show-blog.ejs',
+            template: './resources/html/show-blog.ejs'
+        }),
         new MiniCssExtractPlugin({
             filename: 'css/main.css'
         }),

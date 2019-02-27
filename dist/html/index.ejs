@@ -26,9 +26,19 @@
                             </div>
                         </div>
                         <div class="blog-post__content">
-                            <h2 class="blog-post__content__title"><%= blog.title %></h2>
-                            <p class="blog-post__content__short-desc"><%= blog.body %></p>
-                            <span class="blog-post__content__date"><%= blog.created %></span>
+                            <a href="/blogs/<%= blog._id %>"><h2 class="blog-post__content__title"><%= blog.title %></h2></a>
+                            <p class="blog-post__content__short-desc"><%= blog.body.substring(0, 150) %>..</p>
+                            <div class="blog-post__content__flairs">
+                                <a href='' class="flair">SCSS</a>
+                            </div>
+                            <div class="divider">&nbsp;</div>
+                            <div class="blog-post__content__bottom">
+                                <h4 class="blog-post__content__date"><%= blog.created.toDateString() %></h4>
+                                <div class="blog-post__content__icons">
+                                    <span>6<i class="icon ion-ios-chatbubbles"></i></span>
+                                    <span>16<i class="icon ion-ios-heart"></i></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 <% }); %>
