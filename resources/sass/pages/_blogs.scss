@@ -1,0 +1,77 @@
+// * --------------------- * \\
+//      - BLOGS PAGE -
+// * --------------------- * \\
+
+// Main blog wrapper
+.blogs {
+    position: relative;
+    min-height: 100vh;
+    margin-bottom: 5vh;
+    overflow-x: hidden;
+}
+
+// Shop items container
+.blogs-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80rem, 1fr));
+    grid-row-gap: 5rem;
+    align-items: center;
+    justify-items: center;
+    // * --- MEDIA QUERIE --- * \\
+    @media only screen and (max-width: $bp-small) { justify-items: normal; }
+    @media only screen and (max-width: $bp-vsmall-3) { margin: 0; }
+}
+
+// * --------------------- * \\
+//         - BLOGS -
+// * --------------------- * \\
+
+// Blog Post Wrapper
+.blog-post {
+    width: 50%;
+    min-height: 50%;
+    @media only screen and (max-width: $bp-small) { width: 40%; min-height: 40%; }
+    // Text Content
+    &__content {
+        display: flex;
+        flex-direction: column;
+        min-height: 20vh;
+        background-color: $color-white;
+        -webkit-box-shadow: 0px 4px 3px -2.5px rgba(0,0,0,0.22);
+        -moz-box-shadow: 0px 4px 3px -2.5px rgba(0,0,0,0.22);
+        box-shadow: 0px 4px 3px -2.5px rgba(0,0,0,0.22);
+
+        // Blog Title
+        &__title {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        // Blog's short description
+        &__short-desc {
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+        // Blog's publish date
+        &__date {
+
+        }
+        &__title, &__short-desc { padding-bottom: 2rem; }
+    }
+}
+
+// Image wrapper content inside of a blog post
+.image-content {
+
+    &__image {
+
+    }
+    &__created-by {
+
+    }
+    &__text {
+
+    }
+    &__user {
+
+    }
+}
