@@ -19,7 +19,13 @@
                 <img src="<%= blog.image %>" class="image-wrapper__image" heigth="100%" width="100%">
             </div>
             <div class="text-content">
-                <h2 class="text-content__title"><%= blog.title %></h2>
+                <div class="text-content__topper-content">
+                    <h2 class="text-content__title"><%= blog.title %></h2>
+                    <div class="text-content__topper-content__icons">
+                        <span>6<i class="icon ion-ios-chatbubbles"></i></span>
+                        <span>16<i class="icon ion-ios-heart"></i></span>
+                    </div>
+                </div>
                 <p class="text-content__text"><%= blog.body %></p>
             </div>
         </header>

@@ -97,7 +97,7 @@
     top: 2rem;
     width: calc(100% - 5rem);
     transition: transform .45s cubic-bezier(0.77, 0, 0.175, 1);
-    padding: 10rem 4rem 10rem 5rem;
+    padding: 5rem 4rem 10rem 5rem;
     @media only screen and (max-width: $bp-small) { padding: 12rem 0 0 5rem; }
   }
 

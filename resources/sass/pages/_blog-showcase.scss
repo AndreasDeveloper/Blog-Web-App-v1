@@ -1,0 +1,63 @@
+// * --------------------- * \\
+//    - BLOG SHOWCASE -
+// * --------------------- * \\
+
+// Main Section Wrapper
+.blog-header {
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+// Image Content
+.image-wrapper {
+    position: relative;
+    &__image {
+
+    }
+}
+
+// Text Content
+.text-content {
+    position: relative;
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    margin-top: -30vh;
+    padding: 0 5rem;
+    @media only screen and (max-width: $bp-small) { margin-top: 1vh; }
+
+    // Top Content Wrapper
+    &__topper-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: .1rem solid $color-gray-dark-7;
+        margin-bottom: 3rem;
+        @media only screen and (max-width: $bp-small) { flex-direction: column; text-align: center; }
+
+        // Icons
+        &__icons {
+            justify-self: flex-end;
+            > span, span i { font-size: 2.5rem; padding: 0 1rem; }
+            > span i { color: $color-primary-light; }
+            > span { font-size: 2rem; }
+        }
+    }
+    // Blog Title
+    &__title {
+        align-self: flex-start;
+        justify-self: flex-start;
+        font-size: 4rem;
+        font-weight: 400;
+        letter-spacing: .15rem;
+        margin: 3rem 0;
+    }
+    // Text Content
+    &__text {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 3rem;
+    }
+}

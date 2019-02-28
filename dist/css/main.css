@@ -112,6 +112,20 @@ body {
       .blog-form__field > input:focus, .blog-form__field textarea:focus, .blog-form__content > input:focus, .blog-form__content textarea:focus {
         outline: none;
         box-shadow: 0px 9px 20px rgba(75, 72, 72, 0.3); }
+  .blog-form__button {
+    font-family: 'Raleway';
+    background-color: transparent;
+    border: 0.1rem solid #9c9c9c;
+    cursor: pointer;
+    letter-spacing: .1rem;
+    padding: .5rem;
+    margin-top: 1rem;
+    outline: none; }
+  .blog-form__flairs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; }
   .blog-form > div {
     padding: 1rem 0; }
   .blog-form > div textarea {
@@ -211,7 +225,7 @@ body {
   top: 2rem;
   width: calc(100% - 5rem);
   transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
-  padding: 10rem 4rem 10rem 5rem; }
+  padding: 5rem 4rem 10rem 5rem; }
   @media only screen and (max-width: 37.5em) {
     .new-wrapper {
       padding: 12rem 0 0 5rem; } }
@@ -464,6 +478,56 @@ textarea {
   background: transparent;
   transition: all 0s ease; }
 
+.blog-header {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column; }
+
+.image-wrapper {
+  position: relative; }
+
+.text-content {
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: -30vh;
+  padding: 0 5rem; }
+  @media only screen and (max-width: 37.5em) {
+    .text-content {
+      margin-top: 1vh; } }
+  .text-content__topper-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid #9c9c9c;
+    margin-bottom: 3rem; }
+    @media only screen and (max-width: 37.5em) {
+      .text-content__topper-content {
+        flex-direction: column;
+        text-align: center; } }
+    .text-content__topper-content__icons {
+      justify-self: flex-end; }
+      .text-content__topper-content__icons > span, .text-content__topper-content__icons span i {
+        font-size: 2.5rem;
+        padding: 0 1rem; }
+      .text-content__topper-content__icons > span i {
+        color: #B28451; }
+      .text-content__topper-content__icons > span {
+        font-size: 2rem; }
+  .text-content__title {
+    align-self: flex-start;
+    justify-self: flex-start;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: .15rem;
+    margin: 3rem 0; }
+  .text-content__text {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 3rem; }
+
 .blogs {
   position: relative;
   min-height: 100vh;
@@ -569,7 +633,7 @@ textarea {
   display: flex;
   align-self: center;
   padding: 1rem;
-  width: 65rem;
+  width: 60rem;
   height: 1rem;
   border-top: 0.1rem solid #cccccc;
   margin-top: 3rem; }

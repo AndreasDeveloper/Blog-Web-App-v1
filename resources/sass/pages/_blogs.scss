@@ -52,10 +52,7 @@
             &:hover { color: $color-primary-light; }
         }
         // Blog's short description
-        &__short-desc {
-            font-size: 1.3rem;
-            font-weight: 300;
-        }
+        &__short-desc { font-size: 1.3rem; font-weight: 300; }
         &__title, &__short-desc { padding-bottom: 2rem; }
         // Flairs
         &__flairs {
@@ -89,14 +86,9 @@
             span { font-size: 1.6rem; }
         }
         // Blog's publish date
-        &__date {
-            font-weight: 300;
-            justify-self: flex-start;
-        }
+        &__date { font-weight: 300; justify-self: flex-start; }
         // Comments and Likes icons
-        &__icons {
-            justify-self: flex-end;
-        }
+        &__icons { justify-self: flex-end; }
         > a { text-decoration: none; }
     }
 }
@@ -113,14 +105,8 @@
         left: 5%;
         color: $color-white;
     }
-    &__text {
-        font-weight: 300;
-        letter-spacing: .15rem;
-    }
-    &__user {
-        font-weight: 400;
-        border-bottom: .1rem solid $color-white;
-    }
+    &__text { font-weight: 300; letter-spacing: .15rem; }
+    &__user { font-weight: 400; border-bottom: .1rem solid $color-white; }
 }
 
 // Blog Card Divider
@@ -128,7 +114,7 @@
     display: flex;
     align-self: center;
     padding: 1rem;
-    width: 65rem;
+    width: 60rem;
     height: 1rem;
     border-top: .1rem solid lighten($color-gray-dark-1, 60%);
     margin-top: 3rem;
