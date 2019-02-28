@@ -111,12 +111,14 @@
   .menu {
     position: absolute;
     display: block;
-    left: -200px;
+    left: -240px;
     top: 0;
     width: 25rem;
     transition: all 0.45s cubic-bezier(0.77, 0, 0.175, 1);
     background-color: $color-black;
     z-index: 999;
+    // * -- MEDIA QUERIES -- * \\
+    @media only screen and (max-width: $bp-desktop) { left: -200px; }
   }
   
   .overflow-container {
@@ -153,12 +155,16 @@
   // Stability of menu on hover
   .openNav .menu:hover {
       position: absolute;
-      left: -200px;
+      left: -240px;
+      // * -- MEDIA QUERIES -- * \\
+      @media only screen and (max-width: $bp-desktop) { left: -200px; }
   }
   
   .openNav .menu {
-    transform: translate3d(200px, 0, 0);
+    transform: translate3d(240px, 0, 0);
     transition: transform .45s cubic-bezier(0.77, 0, 0.175, 1);
+    // * -- MEDIA QUERIES -- * \\
+    @media only screen and (max-width: $bp-desktop) { transform: translate3d(200px, 0, 0); }
   }
 
   // -- Mini user navigation -- \\
@@ -221,6 +227,22 @@
   }
   .user-image-wrap:hover .user-image-wrap__circle-2 {
       transform: rotate(-360deg);
+  }
+
+  // -- Create Blog Button -- \\
+  .create-blog-btn-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    // Button
+    .create-blog-btn {
+      border: .1rem solid $color-gray-dark-1;
+      transition: all .2s ease-in-out;
+      &:hover { color: $color-white; border-color: $color-white; }
+
+      > i { padding-left: .5rem; }
+    }
   }
 
   // -- Log Out -- \\

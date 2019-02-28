@@ -1,0 +1,75 @@
+// * --------------------- * \\
+//    - CREATE BLOG FORM -
+// * --------------------- * \\
+
+// Heading Wrapper
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+
+    &__text {
+        font-size: 4rem;
+        font-weight: 500;
+    }
+    &__sub-text {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+}
+
+// Full form wrapper
+.blog-form-wrap {
+    min-height: 20vh;
+    background-color: $color-white;
+    border-radius: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 20rem;
+    -webkit-box-shadow: 0px 4px 10px -2.5px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0px 4px 10px -2.5px rgba(0,0,0,0.22);
+    box-shadow: 0px 4px 10px -2.5px rgba(0,0,0,0.22);
+}
+
+// Form wrapper
+.blog-form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // Field
+    &__field, &__content {
+        display: flex;
+        flex-direction: column;
+        > label { 
+            font-weight: 300;
+            align-self: flex-start; 
+            padding-bottom: .3rem; 
+        }
+        > input, textarea {
+            border: 0;
+            width: 100%;
+            width: 35rem;
+            height: 100%;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 3px;
+            box-shadow: 0px 8px 15px rgba($color-tundora, 0.1);
+            transition: all 0.4s ease;
+            &:focus {
+                outline: none;
+                box-shadow: 0px 9px 20px rgba($color-tundora, 0.3);
+            }
+        }
+    }
+
+    > div { padding: 1rem 0; }
+    > div textarea { font-size: 1.3rem; font-family: 'Raleway'; font-weight: 400; }
+    > div input, div textarea { outline: none; }
+}

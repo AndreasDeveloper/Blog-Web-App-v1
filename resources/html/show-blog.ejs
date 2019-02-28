@@ -10,5 +10,20 @@
 </head>
 <body>
 
+    <!-- INCLUDING SIDE NAVIGATION -->
+    <% include ./ejs-partials/navigation.ejs %>    
+
+    <div class="new-wrapper">
+        <header class="blog-header">
+            <div class="image-wrapper">
+                <img src="<%= blog.image %>" class="image-wrapper__image" heigth="100%" width="100%">
+            </div>
+            <div class="text-content">
+                <h2 class="text-content__title"><%= blog.title %></h2>
+                <p class="text-content__text"><%= blog.body %></p>
+            </div>
+        </header>
+    </div>
+
 </body>
 </html>

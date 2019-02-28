@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
     <title>New Blog - Blogify V1</title>
 </head>
 <body>
@@ -13,6 +14,10 @@
     <% include ./ejs-partials/navigation.ejs %>
 
     <div class="new-wrapper">
+        <div class="heading">
+            <h1 class="heading__text">Create New Blog</h1>
+            <h2 class="heading__sub-text">&mdash; Share Your Stories &mdash;</h2>
+        </div>
         <div class="blog-form-wrap">
             <form action="/blogs" method="POST" class="blog-form">
                 <div class="blog-form__field">
@@ -23,9 +28,9 @@
                     <label>Image</label>
                     <input class="blog-form__input" type="text" name="blog[image]" placeholder="Image" required>
                 </div>
-                <div class="blog-form__field">
+                <div class="blog-form__content">
                     <label>Content</label>
-                    <textarea class="blog-form__input" type="text" name="blog[body]" placeholder="Content" required></textarea>
+                    <textarea class="blog-form__input" type="text" name="blog[body]" rows="5" placeholder="Content" required></textarea>
                 </div>
                 <button type="submit" class="blog-form__button">Create</button>
             </form>

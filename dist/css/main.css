@@ -59,6 +59,68 @@ body {
     body {
       padding: 0; } }
 
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%; }
+  .heading__text {
+    font-size: 4rem;
+    font-weight: 500; }
+  .heading__sub-text {
+    font-size: 1.8rem;
+    font-weight: 400; }
+
+.blog-form-wrap {
+  min-height: 20vh;
+  background-color: #fff;
+  border-radius: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 20rem;
+  -webkit-box-shadow: 0px 4px 10px -2.5px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 4px 10px -2.5px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 4px 10px -2.5px rgba(0, 0, 0, 0.22); }
+
+.blog-form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .blog-form__field, .blog-form__content {
+    display: flex;
+    flex-direction: column; }
+    .blog-form__field > label, .blog-form__content > label {
+      font-weight: 300;
+      align-self: flex-start;
+      padding-bottom: .3rem; }
+    .blog-form__field > input, .blog-form__field textarea, .blog-form__content > input, .blog-form__content textarea {
+      border: 0;
+      width: 100%;
+      width: 35rem;
+      height: 100%;
+      padding: 10px 20px;
+      background: white;
+      border-radius: 3px;
+      box-shadow: 0px 8px 15px rgba(75, 72, 72, 0.1);
+      transition: all 0.4s ease; }
+      .blog-form__field > input:focus, .blog-form__field textarea:focus, .blog-form__content > input:focus, .blog-form__content textarea:focus {
+        outline: none;
+        box-shadow: 0px 9px 20px rgba(75, 72, 72, 0.3); }
+  .blog-form > div {
+    padding: 1rem 0; }
+  .blog-form > div textarea {
+    font-size: 1.3rem;
+    font-family: 'Raleway';
+    font-weight: 400; }
+  .blog-form > div input, .blog-form div textarea {
+    outline: none; }
+
 .primary-nav {
   position: fixed;
   z-index: 999; }
@@ -163,12 +225,15 @@ body {
 .menu {
   position: absolute;
   display: block;
-  left: -200px;
+  left: -240px;
   top: 0;
   width: 25rem;
   transition: all 0.45s cubic-bezier(0.77, 0, 0.175, 1);
   background-color: #000;
   z-index: 999; }
+  @media only screen and (max-width: 86.875em) {
+    .menu {
+      left: -200px; } }
 
 .overflow-container {
   position: relative;
@@ -203,11 +268,17 @@ body {
 
 .openNav .menu:hover {
   position: absolute;
-  left: -200px; }
+  left: -240px; }
+  @media only screen and (max-width: 86.875em) {
+    .openNav .menu:hover {
+      left: -200px; } }
 
 .openNav .menu {
-  transform: translate3d(200px, 0, 0);
+  transform: translate3d(240px, 0, 0);
   transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1); }
+  @media only screen and (max-width: 86.875em) {
+    .openNav .menu {
+      transform: translate3d(200px, 0, 0); } }
 
 .user-mini-nav {
   display: flex;
@@ -265,6 +336,20 @@ body {
 
 .user-image-wrap:hover .user-image-wrap__circle-2 {
   transform: rotate(-360deg); }
+
+.create-blog-btn-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  .create-blog-btn-wrap .create-blog-btn {
+    border: 0.1rem solid #333;
+    transition: all .2s ease-in-out; }
+    .create-blog-btn-wrap .create-blog-btn:hover {
+      color: #fff;
+      border-color: #fff; }
+    .create-blog-btn-wrap .create-blog-btn > i {
+      padding-left: .5rem; }
 
 .log-out {
   position: absolute;
