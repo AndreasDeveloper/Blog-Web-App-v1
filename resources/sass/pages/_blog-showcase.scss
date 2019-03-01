@@ -60,4 +60,13 @@
         font-weight: 300;
         line-height: 3rem;
     }
+    // Bottom Content
+    &__bottom-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        > a { margin-right: 3rem; text-decoration: none; }
+    }
 }

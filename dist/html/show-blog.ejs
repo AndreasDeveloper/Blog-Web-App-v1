@@ -30,7 +30,7 @@
                     <p class="text-content__text"><%= blog.body %></p>
                 </div>
                 <div class="text-content__bottom-content">
-                    <a href="/blogs/<%= blog._id %>/edit">Edit</a>
+                    <a class="blog-form__button" href="/blogs/<%= blog._id %>/edit">Edit</a>
                     <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
                         <button type="submit" class="blog-form__button">Delete</button>
                     </form>

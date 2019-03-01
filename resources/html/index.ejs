@@ -29,7 +29,7 @@
                             <a href="/blogs/<%= blog._id %>"><h2 class="blog-post__content__title"><%= blog.title %></h2></a>
                             <p class="blog-post__content__short-desc"><%= blog.body.substring(0, 150) %>..</p>
                             <div class="blog-post__content__flairs">
-                                <a href='' class="flair">SCSS</a>
+                                <a href='' class="flair"><%= blog.flair %></a>
                             </div>
                             <div class="divider">&nbsp;</div>
                             <div class="blog-post__content__bottom">

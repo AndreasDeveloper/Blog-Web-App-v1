@@ -527,6 +527,14 @@ textarea {
     font-size: 1.6rem;
     font-weight: 300;
     line-height: 3rem; }
+  .text-content__bottom-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
+    .text-content__bottom-content > a {
+      margin-right: 3rem;
+      text-decoration: none; }
 
 .blogs {
   position: relative;

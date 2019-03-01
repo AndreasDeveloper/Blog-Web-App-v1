@@ -30,7 +30,8 @@ const blogSchema = new mongoose.Schema({
     created: { 
         type: Date,
         default: Date.now
-     }
+     },
+    flair: String
 });
 // - Converting Schema to a model - \\
 const Blog = mongoose.model('Blog', blogSchema);
