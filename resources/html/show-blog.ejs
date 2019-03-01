@@ -26,7 +26,15 @@
                         <span>16<i class="icon ion-ios-heart"></i></span>
                     </div>
                 </div>
-                <p class="text-content__text"><%= blog.body %></p>
+                <div class="text-content__main-content">
+                    <p class="text-content__text"><%= blog.body %></p>
+                </div>
+                <div class="text-content__bottom-content">
+                    <a href="/blogs/<%= blog._id %>/edit">Edit</a>
+                    <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="blog-form__button">Delete</button>
+                    </form>
+                </div>
             </div>
         </header>
     </div>

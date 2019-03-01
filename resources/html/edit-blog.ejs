@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
-    <title>New Blog - Blogify V1</title>
-<link href="../css/main.css" rel="stylesheet"></head>
+    <title>Edit Blog - Blogify V1</title>
+    <link href="/../css/main.css" rel="stylesheet">
+</head>
 <body>
 
     <!-- INCLUDING SIDE NAVIGATION -->
@@ -15,23 +16,23 @@
 
     <div class="new-wrapper">
         <div class="heading">
-            <h1 class="heading__text">Create New Blog</h1>
-            <h2 class="heading__sub-text">&mdash; Share Your Stories &mdash;</h2>
+            <h1 class="heading__text">Edit <%= blog.title %></h1>
+            <h2 class="heading__sub-text">&mdash; Edit Your Stories &mdash;</h2>
         </div>
-        <!-- CREATE BLOG FORM | START -->
+        <!-- EDIT BLOG FORM | START -->
         <div class="blog-form-wrap">
-            <form action="/blogs" method="POST" class="blog-form">
+            <form action="/blogs/<%= blog._id %>?_method=PUT" method="POST" class="blog-form">
                 <div class="blog-form__field">
                     <label>Title</label>
-                    <input class="blog-form__input" type="text" name="blog[title]" placeholder="Title" required>
+                    <input class="blog-form__input" type="text" name="blog[title]" value="<%= blog.title %>" required>
                 </div>
                 <div class="blog-form__field">
                     <label>Image</label>
-                    <input class="blog-form__input" type="text" name="blog[image]" placeholder="Image" required>
+                    <input class="blog-form__input" type="text" name="blog[image]" value="<%= blog.image %>" required>
                 </div>
                 <div class="blog-form__content">
                     <label>Content</label>
-                    <textarea class="blog-form__input" type="text" name="blog[body]" rows="5" placeholder="Content" required></textarea>
+                    <textarea class="blog-form__input" type="text" name="blog[body]" rows="5" required><%= blog.body %></textarea>
                 </div>
                 <div class="blog-form__flairs">
                     <label>Flair</label>
@@ -43,10 +44,11 @@
                         <option value="fashion">Fashion</option>
                     </select>
                 </div>
-                <button type="submit" class="blog-form__button">Create</button>
+                <button type="submit" class="blog-form__button">Update</button>
             </form>
         </div>
-        <!-- CREATE BLOG FORM | END -->
+        <!-- EDIT BLOG FORM | END -->
     </div>
-<script type="text/javascript" src="../js/bundle.js"></script></body>
-</html>
+    <script type="text/javascript" src="/../js/bundle.js"></script>
+</body>
+</html

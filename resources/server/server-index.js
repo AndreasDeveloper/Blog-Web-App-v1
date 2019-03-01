@@ -3,7 +3,9 @@ const express = require('express'),
       app = express(),
       path = require('path'),
       bodyParser = require('body-parser'),
-      mongoose = require('mongoose');
+      mongoose = require('mongoose'),
+      methodOverride = require('method-override'),
+      expressSanitizer = require('express-sanitizer');
 
 // - MongoDB Setup - \\
 mongoose.connect('mongodb://localhost/blog_app_v1');
@@ -13,6 +15,10 @@ app.set('view engine', 'ejs');
 app.use(express.static(`${__dirname}/../../dist`));
 // - Body Parser Setup - \\
 app.use(bodyParser.urlencoded({extended: true}));
+// - Method Override Setup - \\
+app.use(methodOverride('_method'));
+// - Express Sanitizer Setup - \\
+app.use(expressSanitizer());
 
 // * ------------ * \\
 //   - DB Schema -
@@ -64,6 +70,7 @@ app.get('/blogs/new', (req, res) => {
 
 // - POST - Create new Blog  - | Creating new blog
 app.post('/blogs', (req, res) => {
+    req.body.blog.body = req.sanitize(req.body.blog.body);
     // Create Blog
     const dataBody = req.body.blog;
     Blog.create(dataBody, (err, newBlog) => {
@@ -88,6 +95,45 @@ app.get('/blogs/:id', (req, res) => {
     });
 }); 
 
+// - GET - Edit Blog - | Edit posted blog page
+app.get('/blogs/:id/edit', (req, res) => {
+    const blogID = req.params.id;
+    Blog.findById(blogID, (err, idFoundBlog) => {
+        if (!err) {
+            res.render((`${__dirname}/../../dist/html/edit-blog.ejs`), { blog: idFoundBlog });
+        } else {
+            throw new Error(err);
+        }
+    });
+});
+
+// - PUT - Updating Blog - | Update posted blog
+app.put('/blogs/:id', (req, res) => {
+    req.body.blog.body = req.sanitize(req.body.blog.body);
+    const blogID = req.params.id,
+          blogData = req.body.blog;
+    // Update Blog
+    Blog.findByIdAndUpdate(blogID, blogData, (err, updateBlog) => {
+        if (!err) {
+            res.redirect(`/blogs/${blogID}`);
+        } else {
+            throw new Error(err);
+        }
+    });
+});
+
+// - DELETE - Deleting Blog - | Delete the posted blog
+app.delete('/blogs/:id', (req, res) => {
+    const blogID = req.params.id;
+    // Delete Blog
+    Blog.findByIdAndRemove(blogID, err => {
+        if (!err) {
+            res.redirect('/blogs');
+        } else {
+            throw new Error(err);
+        }
+    });
+});
 
 // - Setting The Port | Listening - \\
 const port = 3000;

@@ -32,6 +32,11 @@ module.exports = {
             filename: 'html/show-blog.ejs',
             template: './resources/html/show-blog.ejs'
         }),
+        new HtmlWebpackPlugin({ // Edit Blog Page
+            filename: 'html/edit-blog.ejs',
+            template: './resources/html/edit-blog.ejs',
+            excludeAssets: [/main.css/, /bundle.js/]
+        }),
         new MiniCssExtractPlugin({
             filename: 'css/main.css'
         }),
